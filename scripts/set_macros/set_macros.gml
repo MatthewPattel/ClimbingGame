@@ -1,0 +1,49 @@
+/// @description set_macros()
+
+#macro GRID_SIZE 72
+
+#macro CELL_WIDTH 16
+#macro CELL_HEIGHT 16
+
+#macro CELL_SIZE 16
+#macro REGION_SIZE 8
+
+#macro MAP_TERRAIN_TOP 1
+#macro MAP_TERRAIN_LEFT 2
+#macro MAP_TERRAIN_NORMAL 3
+#macro MAP_TERRAIN_RIGHT 4
+#macro MAP_TERRAIN_LEFT_CORNER 5
+#macro MAP_TERRAIN_RIGHT_CORNER 6
+
+#macro TERRAIN_VOID 0
+
+#macro TERRAIN_BASE 1
+#macro TERRAIN_VARIANT 2
+#macro TERRAIN_SPECIAL 3
+#macro TERRAIN_WATER 4
+#macro TERRAIN_STONE 5
+
+#macro MAP_SMALL 1
+#macro MAP_MEDIUM 2
+#macro MAP_BIG 3
+
+#macro MAP_SMALL_WIDTH 3
+#macro MAP_SMALL_HEIGHT 12
+
+#macro MAP_MEDIUM_WIDTH 5
+#macro MAP_MEDIUM_HEIGHT 15
+
+#macro MAP_BIG_WIDTH 9
+#macro MAP_BIG_HEIGHT 18
+
+
+#macro NORTH_WEST 1
+#macro NORTH 2
+#macro NORTH_EAST 4
+
+#macro WEST 8
+#macro EAST 16
+
+#macro SOUTH_WEST 32
+#macro SOUTH 64
+#macro SOUTH_EAST 128
