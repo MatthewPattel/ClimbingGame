@@ -122,20 +122,6 @@ var tile_index = NORTH*tile_north + WEST*tile_west + EAST*tile_east + SOUTH*tile
 */
 #endregion
 
-/*
-for (var cy = 1 ; cy < grid_height-1 ; cy++) {
-	for (var cx = 1 ; cx < grid_width-1 ; cx++) {
-		if (grid_terrain[# cx, cy] != TERRAIN_EASY) {
-			var tile_index = set_tile_index(cx, cy, TERRAIN_VOID, map_index_ids, grid_terrain);
-			
-			if (tile_index == 1) {
-				grid_terrain[# cx, cy] = TERRAIN_EASY;
-			}
-		}
-	}
-}
-*/
-
 // Set the tile id for each grid terrain
 for (var cy = 0 ; cy <= grid_height ; cy++) {
 	for (var cx = 0 ; cx <= grid_width ; cx++) {
