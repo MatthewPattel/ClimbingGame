@@ -10,10 +10,6 @@ if keyboard_check(ord("M")) {
 	}
 }
 
-if gamepad_is_connected(0) {
-	game_gamepad_get_input(0);
-}
-
 key_up = keyboard_check(vk_up);
 key_down = keyboard_check(vk_down);
 key_left = keyboard_check(vk_left);

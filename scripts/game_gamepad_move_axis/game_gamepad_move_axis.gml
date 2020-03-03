@@ -17,26 +17,35 @@ var movement_x = false;
 var movement_y = false;
 
 var move_x = axis_x + key_x;
-var move_y = axis_y + key_y;
 
 if (move_x > 1) move_x = 1;
 if (move_x < -1) move_x = -1;
+
+var move_y = axis_y + key_y;
 
 if (move_y > 1) move_y = 1;
 if (move_y < -1) move_y = -1;
 
 
+hspd = move_x*spd;
+vspd = move_y*spd;
+
+//Collisions
+set_player_collision();
 
 // Move the character if possible
+
 if (abs(move_x) >= threshold) {
 	movement_x = true;
-	x += move_x*spd;
-}
-if (abs(move_y) >= threshold) {
-	movement_y = true;
-	y += move_y*spd;
+	x += hspd;
 }
 
+if (abs(move_y) >= threshold) {
+	movement_y = true;
+	y += vspd;
+}
+
+// Secure movement when pressing key
 if (key_x != 0) or (key_y != 0) {
 	move_x = key_x;
 	move_y = key_y;
@@ -45,5 +54,6 @@ if (key_x != 0) or (key_y != 0) {
 show_debug_message("move_x = " + string(move_x));
 show_debug_message("move_y = " + string(move_y));
 
+// Change image angle
 var dir = point_direction(0, 0, move_x, move_y);
 if (movement_x or movement_y) image_angle = dir;

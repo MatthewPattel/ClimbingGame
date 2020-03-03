@@ -1,3 +1,5 @@
+/// @description draw_sprite_3d()
+
 var d = 0.25;
 
 for (var i=0 ; i<image_number ; i+=d) {

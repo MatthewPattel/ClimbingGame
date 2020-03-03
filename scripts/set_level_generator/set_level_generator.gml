@@ -130,18 +130,22 @@ for (var cy = 0 ; cy <= grid_height ; cy++) {
 			var tile_id, tile_index;
 			
 			tile_id = tile_id_base;
-			tilemap_set(tile_id, 1, cx, cy);
 			
 			switch(global.grid_terrain[# cx, cy]) {
-				case TERRAIN_BASE: tile_id = tile_id_base;
+				case TERRAIN_BASE:
+					tile_id = tile_id_base;
 				break;
-				case TERRAIN_VARIANT: tile_id = tile_id_variant;
+				case TERRAIN_VARIANT:
+					tile_id = tile_id_variant;
 				break;
-				case TERRAIN_SPECIAL: tile_id = tile_id_special;
+				case TERRAIN_SPECIAL:
+					tile_id = tile_id_special;
 				break;
-				case TERRAIN_WATER: tile_id = tile_id_water;
+				case TERRAIN_WATER:
+					tile_id = tile_id_water;
 				break;
-				case TERRAIN_STONE: tile_id = tile_id_stone;
+				case TERRAIN_STONE:
+					tile_id = tile_id_stone;
 				break;
 			}
 			
@@ -153,9 +157,13 @@ for (var cy = 0 ; cy <= grid_height ; cy++) {
 				tile_index = set_tile_index(cx, cy, false);
 				show_debug_message(tile_index);
 				tilemap_set(tile_id, real(tile_index), cx, cy);
+				if (tile_id == tile_id_special) tilemap_set(tile_id_void, 1, cx, cy);
+				if (tile_id == tile_id_stone) tilemap_set(tile_id_void, 1, cx, cy);
 			}
 			//Secure snow in the tiles where	global.grid_terrain[# cx, cy] != 0
 			//if (tile_id != tile_id_easy) { tilemap_set(tile_id_easy, 6, cx, cy); }
+		} else {
+			tilemap_set(tile_id_void, 1, cx, cy);
 		}
 	}
 }
