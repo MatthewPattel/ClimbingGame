@@ -6,6 +6,8 @@ tilemap = layer_tilemap_get_id(layer_get_id("Tiles_VOID"));
 mode = "NORMAL";
 spd = 1;
 
+mask_visible = true;
+
 hspd = 0;
 hspd_f = 0;
 hspd_final = 0;

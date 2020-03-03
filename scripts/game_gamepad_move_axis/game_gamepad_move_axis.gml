@@ -26,9 +26,17 @@ var move_y = axis_y + key_y;
 if (move_y > 1) move_y = 1;
 if (move_y < -1) move_y = -1;
 
+// Secure movement when pressing key
+if (key_x != 0) or (key_y != 0) {
+	move_x = key_x;
+	move_y = key_y;
+}
 
-hspd = move_x*spd;
-vspd = move_y*spd;
+var inputDirection = point_direction(0, 0, move_x, move_y);
+var inputMagnitude = point_distance(0, 0, move_x, move_y);
+
+hspd = lengthdir_x(inputMagnitude*spd, inputDirection)
+vspd = lengthdir_y(inputMagnitude*spd, inputDirection);
 
 //Collisions
 set_player_collision();
@@ -45,15 +53,8 @@ if (abs(move_y) >= threshold) {
 	y += vspd;
 }
 
-// Secure movement when pressing key
-if (key_x != 0) or (key_y != 0) {
-	move_x = key_x;
-	move_y = key_y;
-}
-
 show_debug_message("move_x = " + string(move_x));
 show_debug_message("move_y = " + string(move_y));
 
 // Change image angle
-var dir = point_direction(0, 0, move_x, move_y);
-if (movement_x or movement_y) image_angle = dir;
+if (movement_x or movement_y) image_angle = inputDirection;

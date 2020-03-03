@@ -20,3 +20,7 @@ if keyboard_check_released(ord("V")) {
 		obj_number.visible = !obj_number.visible;
 	}
 }
+
+if keyboard_check_released(ord("B")) {
+	layer_set_visible("Tiles_VOID", !layer_get_visible("Tiles_VOID"));
+}
